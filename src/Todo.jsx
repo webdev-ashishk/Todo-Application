@@ -2,14 +2,18 @@ import { useState } from "react";
 
 const Todo = () => {
   const [todo, setTodo] = useState("");
+  const [listData, setListData] = useState([]);
   function handleChange(e) {
     setTodo(e.target.value);
-    console.log(todo);
+    // console.log(todo);
   }
   function addTodo() {
-    alert("working");
+    //...listData copy all the data form the array
+    setListData([...listData, todo]);
+    console.log(todo);
+    setTodo("");
   }
-  return ( 
+  return (
     <>
       <div className="container">
         <input
